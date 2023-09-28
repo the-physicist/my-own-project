@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pick a favorite movie</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,400;0,600;1,200&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/tooltipster/2.3.0/css/reset.min.css"
+    />
+    <link rel="stylesheet" href="./assets/css/main.css" />
+  </head>
+  <body>
+    <main>
+      <header>
+        <img
+          id="page-logo"
+          src="./assets/img/logo.png"
+          alt="Logo do Sextou Flix. A palavra 'sextou' está escrita em vermelho e em caixa alta, enquanto a palavra 'flix', acima da anterior, está na cor branca e com sombreamento. Há também uma imagem de fitas VHS embaixo do letreiro."
+        />
+        <p>
+          Não consegue escolher um filme para assistir? Eu escolho por você!
+        </p>
+        <h1 id="page-title">
+          Você pode escolher um filme <span>popular</span>
+        </h1>
+      </header>
+
+      <section class="popular-movies">
+        <h2 class="section_title" id="popular-movies__title">
+          Filmes bombando no momento
+        </h2>
+
+        <div class="popular-movies__container">
+          <div class="popular-movies__container__items">
+            Popular Movies Section
+          </div>
+        </div>
+      </section>
+
+      <section class="movies-by-genre">
+        <h2 class="section_title" id="movies-by-genre__title">
+          Você se identifica com qual gênero? o.o
+        </h2>
+
+        <div class="movies-by-genre__filter">
+          <ul id="movies-by-genre__list">
+            <li class="movies-by-genre__category">
+              <a class="movies-by-genre__button" data-value="16">Animação</a>
+            </li>
+
+            <li class="movies-by-genre__category">
+              <a class="movies-by-genre__button" data-value="12">Aventura</a>
+            </li>
+
+            <li class="movies-by-genre__category">
+              <a class="movies-by-genre__button" data-value="28">Ação</a>
+            </li>
+
+            <li class="movies-by-genre__category">
+              <a class="movies-by-genre__button" data-value="10770"
+                >Cinema TV</a
+              >
+            </li>
+
+            <li class="movies-by-genre__category">
+              <a class="movies-by-genre__button" data-value="35">Comédia</a>
+            </li>
+
+            <li class="movies-by-genre__category">
+              <a class="movies-by-genre__button" data-value="80">Crime</a>
+            </li>
+
+            <li class="movies-by-genre__category">
+              <a class="movies-by-genre__button" data-value="99"
+                >Documentário</a
+              >
+            </li>
+
+            <li class="movies-by-genre__category" data-value="18">
+              <a class="movies-by-genre__button">Drama</a>
+            </li>
+
+            <li class="movies-by-genre__category" data-value="10751">
+              <a class="movies-by-genre__button">Família</a>
+            </li>
+
+            <li class="movies-by-genre__category" data-value="14">
+              <a class="movies-by-genre__button">Fantasia</a>
+            </li>
+
+            <li class="movies-by-genre__category" data-value="37">
+              <a class="movies-by-genre__button">Faroeste</a>
+            </li>
+
+            <li class="movies-by-genre__category" data-value="878">
+              <a class="movies-by-genre__button">Ficção científica</a>
+            </li>
+
+            <li class="movies-by-genre__category" data-value="10752">
+              <a class="movies-by-genre__button">Guerra</a>
+            </li>
+
+            <li class="movies-by-genre__category" data-value="36">
+              <a class="movies-by-genre__button">História</a>
+            </li>
+
+            <li class="movies-by-genre__category" data-value="9648">
+              <a class="movies-by-genre__button">Mistério</a>
+            </li>
+
+            <li class="movies-by-genre__category" data-value="10402">
+              <a class="movies-by-genre__button">Música</a>
+            </li>
+
+            <li class="movies-by-genre__category" data-value="10749">
+              <a class="movies-by-genre__button">Romance</a>
+            </li>
+
+            <li class="movies-by-genre__category" data-value="27">
+              <a class="movies-by-genre__button">Terror</a>
+            </li>
+
+            <li class="movies-by-genre__category" data-value="53">
+              <a class="movies-by-genre__button">Thriller</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="movies-by-genre__container">
+          <div class="movies-by-genre__container__items"></div>
+        </div>
+      </section>
+
+      <div class="buttons">
+        <button class="btn btn-random-movie">
+          Sortear um filme do momento
+        </button>
+        <button class="btn btn-new-list">Criar minha lista</button>
+      </div>
+    </main>
+
+    <!-- type="module" is necessary to import the API constants -->
+    <script src="./assets/js/main.js" type="module"></script>
+  </body>
+</html>

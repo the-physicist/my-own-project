@@ -1,0 +1,128 @@
+@import url(./colors.css);
+
+/* Global reset and settings */
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: 'Source Code Pro', monospace;
+  font-size: 16px;
+  background: linear-gradient(129.47deg, #b81d24 0%, #181818 67%);
+  overflow-x: hidden;
+  height: 100vh;
+}
+
+main {
+  text-align: center;
+}
+
+/* Header */
+#page-logo {
+  height: 300px;
+}
+
+#page-title {
+  font-size: 2rem;
+  margin: 1em 0 1em 0;
+}
+
+#page-title span {
+  background-color: var(--bg-red-secondary);
+  color: var(--bg-white);
+  padding: 0.1em;
+  font-size: 3.5rem;
+  margin-right: 0.5em;
+}
+
+.section_title {
+  font-size: 3rem;
+}
+
+.popular-movies__container,
+.movies-by-genre__container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  margin: 2em 0;
+}
+
+.movie-poster {
+  width: 250px;
+  padding: 1em;
+  transition: transform 0.7s, filter 1.5s ease-in-out;
+  transform-origin: center center;
+  filter: brightness(50%);
+}
+
+.movie-poster:hover {
+  filter: brightness(100%);
+  transform: scale(1.3);
+}
+
+.movie-title {
+  font-size: 1.3rem;
+  width: 250px;
+  color: var(--bg-white);
+}
+
+.btn {
+  background-image: linear-gradient(
+    to right,
+    #181818 0%,
+    #b81d24 51%,
+    #181818 100%
+  );
+}
+.btn {
+  font-size: 1.5rem;
+  margin: 2em 1em;
+  padding: 15px 25px;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: var(--bg-white);
+  box-shadow: 0 0 5px var(--bg-white);
+  border-radius: 30px;
+}
+
+.btn:hover {
+  background-position: right center;
+}
+
+/* filter */
+
+.movies-by-genre__filter {
+  width: 100%;
+  padding: 14px 16px 16px 16px;
+}
+
+ul.movies-by-genre__list {
+  display: block;
+  list-style-type: none;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  padding-inline-start: 40px;
+}
+
+li.movies-by-genre__category {
+  display: inline-flex;
+  border: 1px solid var(--bg-red-secondary);
+  border-radius: 14px;
+  padding: 4px 12px;
+  font-size: 3em;
+  margin-right: 6px;
+  margin-top: 8px;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: normal;
+  cursor: pointer;
+}
