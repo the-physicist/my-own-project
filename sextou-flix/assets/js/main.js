@@ -12,7 +12,7 @@ import {
 const popularMoviesContainer = document.querySelector('.popular-movies__container')
 const moviesByGenreContainer = document.querySelector('.movies-by-genre__container')
 const genreButtons = document.querySelectorAll('.movies-by-genre__button')
-let genre = 99 // Default genre (Documentary)
+let defaultGenreId = 99 // Default genre (Documentary)
 
 function createMovieElement(movie) {
   const { title, poster_path } = movie;
@@ -40,29 +40,44 @@ function showMovies(container, data) {
   });
 }
 
-
-async function getMovies(url, container) {
+async function fetchData(url, container, count) {
   try {
-    const response = await fetch(url)
-    const data = await response.json()
-    showMovies(container, data.results.slice(0, 6))
+    const response = await fetch(url);
+    if (!response.ok) {
+      throw new Error('Request failed.');
+    }
+    const data = await response.json();
+    showMovies(container, data.results.slice(0, count));
   } catch (error) {
-    console.error('Failed to fetch movies:', error)
+    console.error('Failed to fetch movies:', error);
   }
 }
 
-function getGenreByFilter(genre) {
-  const url = `${BASE_URL}/discover/movie?${API_KEY}&language=pt-BR&sort_by=popularity.desc&with_genres=${genre}`
-  return getMovies(url, moviesByGenreContainer)
+async function getPopularMovies() {
+  await fetchData(POPULAR_MOVIES_URL, popularMoviesContainer, 6);
 }
 
+async function getMoviesByGenre(genreId) {
+  const url = `${BASE_URL}/discover/movie?${API_KEY}&language=en-US&sort_by=popularity.desc&with_genres=${genreId}`;
+  await fetchData(url, moviesByGenreContainer, 6);
+}
+
+genreButtons.forEach((genreButton) => {
+  genreButton.addEventListener('click', () => {
+    const genreId = genreButton.dataset.value;
+    getMoviesByGenre(genreId);
+  });
+});
 
 
-Array.prototype.map.call(genreButtons, genreButton =>
-  genreButton.addEventListener('click', function () {
-    getGenreByFilter(genreButton.dataset.value)
-  })
-)
+// Array.prototype.map.call(genreButtons, genreButton =>
+//   genreButton.addEventListener('click', function () {
+//     getGenreByFilter(genreButton.dataset.value)
+//   })
+// )
 
-getMovies(POPULAR_MOVIES_URL, popularMoviesContainer)
-getMovies(MOVIES_BY_GENRE_URL, moviesByGenreContainer)
+// showMovies(POPULAR_MOVIES_URL, popularMoviesContainer)
+// showMovies(MOVIES_BY_GENRE_URL, moviesByGenreContainer)
+
+getPopularMovies()
+getMoviesByGenre(defaultGenreId)
