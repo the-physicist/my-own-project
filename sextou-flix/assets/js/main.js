@@ -11,6 +11,7 @@ import {
 // Global constants for functions
 const popularMoviesContainer = document.querySelector('.popular-movies__container')
 const moviesByGenreContainer = document.querySelector('.movies-by-genre__container')
+const genreButtons = document.querySelectorAll('.movies-by-genre__button')
 
 let genre = 99 // Default genre (Documentary)
 
@@ -50,7 +51,7 @@ function getGenreByFilter(genre) {
   return getMovies(url, moviesByGenreContainer)
 }
 
-let genreButtons = document.getElementsByClassName('movies-by-genre__button')
+
 
 Array.prototype.map.call(genreButtons, genreButton =>
   genreButton.addEventListener('click', function () {
