@@ -18,20 +18,25 @@ Entre no diretório do projeto
   cd sextou-flix
 ```
 
-Adicione a `chave` da sua API no arquivo `./assets/js/api.js`. Troque o `xxxxxxxxxxxxxxx` no exemplo abaixo pela sua chave.
+Adicione a `chave` da sua API no arquivo `./assets/js/modules/apiService.js`. Troque o `xxxxxxxxxxxxxxx` no exemplo abaixo pela sua chave.
 
 ```js
-export const API_KEY = `api_key=xxxxxxxxxxxxxxx`
+export const API_KEY = `api_key=xxxxxxxxxxxxxxx`;`
 ```
 
-Execute o arquivo `index.html` em seu navegador favorito.
+Execute o arquivo `index.html` em seu navegador favorito usando um servidor (_Live Preview_ do VSCode, por exemplo).
 
 ## Aprendizados
+
+### 01/10/2023
+
+- Retomada do Projeto;
+- Modularização e reestruturação lógica do projeto;
 
 ### 25/03/2022
 
 - Resolução do bug de 'variável somente em modo leitura' e problemas de escopo global;
-- Depurar usando a aba 'Redes' da ferramenta devtools;
+- Depurar usando a aba 'Redes' da ferramenta DEVTools;
 
 ### 22/03/2022
 
@@ -51,7 +56,7 @@ Execute o arquivo `index.html` em seu navegador favorito.
 
 # Changelog
 
-Abaixo encontra-se as últimas três atualizações do projeto. Todas as outras alterações significativas deste projeto serão documentadas no [CHANGELOG](https://github.com/the-physicist/sextou-flix/blob/main/CHANGELOG.md).
+Abaixo encontra-se as últimas três atualizações do projeto. Todas as outras alterações significativas deste projeto serão documentadas no [CHANGELOG](https://github.com/the-physicist/my-own-project/blob/main/sextou-flix/CHANGELOG.md).
 
 O formato é baseado no [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 e este projeto adere ao [Versionamento Semântico](https://semver.org/spec/v2.0.0.html).
@@ -59,6 +64,15 @@ e este projeto adere ao [Versionamento Semântico](https://semver.org/spec/v2.0.
 ## [Não publicado]
 
 - Estilização dos botões.
+
+## [0.0.4] - 2023-10-01
+
+### Adicionado
+
+- Tudo agora será documentado em Português.
+- Alterada a documentação do projeto.
+- Novas regras de negócios para o projeto.
+- Reestruturado e modularizado o projeto.
 
 ## [0.0.3] - 2022-03-22
 
@@ -86,6 +100,7 @@ e este projeto adere ao [Versionamento Semântico](https://semver.org/spec/v2.0.
 - Adicionado os botões principais no layout.
 
 [não publicado]: https://github.com/the-physicist/sextou-flix/compare/v0.0.4...HEAD
+[0.0.4]: https://github.com/the-physicist/sextou-flix/compare/v0.0.3...v0.0.4
 [0.0.3]: https://github.com/the-physicist/sextou-flix/compare/v0.0.2...v0.0.3
 [0.0.2]: https://github.com/the-physicist/sextou-flix/compare/v0.0.1...v0.0.2
 [0.0.1]: https://github.com/the-physicist/sextou-flix/releases/tag/v0.0.1
