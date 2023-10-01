@@ -25,3 +25,4 @@ document.addEventListener('DOMContentLoaded', () => {
     showMovies(moviesByGenreContainer, data);
   });
 });
+
