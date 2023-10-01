@@ -12,29 +12,34 @@ import {
 const popularMoviesContainer = document.querySelector('.popular-movies__container')
 const moviesByGenreContainer = document.querySelector('.movies-by-genre__container')
 const genreButtons = document.querySelectorAll('.movies-by-genre__button')
-
 let genre = 99 // Default genre (Documentary)
 
-function showMovies(container, data) {
-  container.innerHTML = ''
+function createMovieElement(movie) {
+  const { title, poster_path } = movie;
+  const movieElement = document.createElement('div');
+  movieElement.classList.add('movie-container');
 
-  data.forEach(movie => {
-    const { title, poster_path, overview } = movie
-    const movieElement = document.createElement('div')
-    movieElement.classList.add('movie')
+  const titleFixed = title.replace(/'/i, '`');
 
-    let titleFixed = title.replace(/'/i, '`')
-
-    movieElement.innerHTML = `
+  movieElement.innerHTML = `
     <img class="movie-poster" src="${MOVIE_IMAGE_URL + poster_path}" alt="" />
     <div class="overview">
       <h3 class="movie-title">${titleFixed}</h3>
     </div>
-    `
+  `;
 
-    container.appendChild(movieElement)
-  })
+  return movieElement;
 }
+
+function showMovies(container, data) {
+  container.innerHTML = '';
+
+  data.forEach((movie) => {
+    const movieElement = createMovieElement(movie);
+    container.appendChild(movieElement);
+  });
+}
+
 
 async function getMovies(url, container) {
   try {
